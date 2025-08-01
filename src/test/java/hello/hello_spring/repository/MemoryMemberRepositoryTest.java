@@ -13,7 +13,7 @@ public class MemoryMemberRepositoryTest {
 
     MemoryMemberRepository repository = new MemoryMemberRepository();
 
-    @AfterEach
+    @AfterEach //테스트가 종료될 때마다 실행됨 -> 메모리 DB에 저장된 데이터 삭제
     public void afterEach() {
         repository.clearStore();
     }
