@@ -5,11 +5,13 @@ import hello.hello_spring.repository.MemberRepository;
 import hello.hello_spring.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
 //@Service
+@Transactional //서비스 계층에 트랜잭션 추가 -> JPA 를 통한 모든 데이터 변경은 트랜잭션 안에서 실행해야 한다.
 public class MemberService {
 
     // 기존에는 회원 서비스가 메모리 회원 리포지토리를 직접 생성하게 했다. DI 위반
